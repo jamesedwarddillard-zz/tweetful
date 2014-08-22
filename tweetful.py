@@ -1,5 +1,7 @@
+import authorization
+
 def main():
-	pass
+	authorization.authorize()
 
 if __name__ == "__main__":
 	main()

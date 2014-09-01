@@ -19,7 +19,7 @@ def main():
 	print arguments
 
 	if command == "search":
-		result = search.search(**arguments)
+		result = search.search(arguments['query'],arguments['result_type'], arguments['count'], auth)
 		print json.dumps(result.json(), indent=4)
 
 if __name__ == "__main__":

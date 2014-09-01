@@ -16,11 +16,13 @@ def main():
 	arguments = vars(arguments)
 	#Remove command from the arguments dictionary and store it as a variable
 	command = arguments.pop("command")
-	print arguments
 
 	if command == "search":
 		result = search.search(arguments['query'],arguments['result_type'], arguments['count'], auth)
-		print json.dumps(result.json(), indent=4)
+		result_json =(json.dumps(result.json()))
+		result_decoded = json.loads(result_json)
+		print result_decoded
+
 
 if __name__ == "__main__":
 	main()

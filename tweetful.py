@@ -19,9 +19,7 @@ def main():
 
 	if command == "search":
 		result = search.search(arguments['query'],arguments['result_type'], arguments['count'], auth)
-		result_json =(json.dumps(result.json()))
-		result_decoded = json.loads(result_json)
-		print result_decoded
+		print result
 
 
 if __name__ == "__main__":

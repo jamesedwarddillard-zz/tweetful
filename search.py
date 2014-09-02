@@ -8,9 +8,19 @@ from urls import *
 
 import json
 
+def json_decoder(json_response):
+	"""
+	Takes a json response and decodes it 
+	"""
+	encoded = json.dumps(json_response.json())
+	decoded = json.loads(encoded)
+	return decoded
+
+
 def search(query, result_type, count, auth):
 	"""Performs a twitter search for a user"""
 	payload = {'q': query, 'result_type': result_type, 'count': count}
 	response = requests.get(SEARCH_URL, params=payload, auth=auth)
-	return response
+	decoded_response = json_decoder(response)
+	return decoded_response
 

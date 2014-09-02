@@ -19,7 +19,11 @@ def main():
 
 	if command == "search":
 		result = search.search(arguments['query'],arguments['result_type'], arguments['count'], auth)
-		print result
+		print len(result['statuses'])
+		print result['statuses'][0]['text']
+		print result['statuses'][1]['text']
+		print result['statuses'][2]['text']
+
 
 
 if __name__ == "__main__":

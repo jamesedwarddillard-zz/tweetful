@@ -12,8 +12,8 @@ def json_decoder(json_response):
 	"""
 	Takes a json response and decodes it 
 	"""
-	encoded = json.dumps(json_response.json())
-	decoded = json.loads(encoded)
+	encoded = json.dumps(json_response.json(), encoding='utf-8')
+	decoded = json.loads(encoded, encoding='utf-8')
 	return decoded
 
 
